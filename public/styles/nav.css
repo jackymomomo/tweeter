@@ -1,0 +1,33 @@
+nav {
+  display: flex; 
+  width: 100%;
+  justify-content: space-between; 
+  position: fixed;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+nav p {
+  display: flex; 
+  align-items: flex-start;
+  margin: 1.5em;
+  
+}
+
+nav span {
+  font-family: "Bungee", sans-serif;
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
+
+nav p i {
+  display: flex;
+  align-self: center;
+ color: red;
+ margin-top: 35%;
+}
+ 
+

@@ -29,6 +29,15 @@ nav {
   font-weight: 400;
 }
 
+main{
+  width: 90%;
+  background-color: #f4f1ec;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
