@@ -1,11 +1,11 @@
-header {
+.background {
   background-color: #00382a;
   background-image: url("https://www.transparenttextures.com/patterns/cutcube.png");
   height: 400px;
   width: 100%;
 }
 
-header div {
+.background div {
   color: aliceblue;
   display: flex;
   justify-content: center;

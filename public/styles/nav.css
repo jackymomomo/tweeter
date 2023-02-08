@@ -22,12 +22,11 @@ nav span {
   align-items: center;
   margin: 1em;
 }
-
-nav p i {
-  display: flex;
-  align-self: center;
- color: red;
- margin-top: 35%;
-}
  
+strong {
+  margin-right: 8px;
+}
 
+nav i {
+  color: red
+}
