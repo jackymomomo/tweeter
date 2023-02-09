@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="./styles/tweet-box.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/tweets.css" type="text/css" />
 
 
 
@@ -30,20 +30,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="./scripts/client.js"></script>
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+     crossorigin="anonymous" 
+     referrerpolicy="no-referrer">
+    </script>
 
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      
-      <p><strong>Write</strong> a new Tweet
-        <i class="fa-solid fa-angles-down"></i></p> 
-       
+    <<nav>
+      <span class="a">Tweeter</span>
+      <span class="b">Write a new tweet<i class="fas fa-angle-double-down" style= "color: red"></i></span>
     </nav>
     
     <header class="background">
@@ -60,44 +62,45 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="post">
-          <label for="tweet-text">
-            <!-- What are you humming about? -->
-          </label>
+        <form action="/tweets" method="POST">
+
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <button class="tweet-button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      </section>
-    
-      <section class="tweets">
-        <div class="tweets-container">
-          <article class="tweet">
-            <header class="tweet-header">
-                <img src="https://picsum.photos/50/50" alt="Avatar">
-              <div class="tweet-info">
-                <div class="username">John Doe</div>
-                <div class="handle">@johndoe</div>
-              </div>
-            </header>
-            <footer class="tweet-footer">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel laoreet velit. Nulla ac sagittis sem, id bibendum eros.</p>
-              <p class="line"></p>
-              <span class="tweet-buttons">
-                <i class="fa-solid fa-retweet fa-xl"></i>
-                <i class="fa-solid fa-flag fa-xl"></i>
-                <i class="fa-solid fa-heart fa-xl"></i>
-              </span>
-            </footer>
-          </article>
-          <!-- Add additional tweets here -->
-        </div>
-      </section>
+      </section>    
+      <section id="tweets-container"></section>
     </main>
   </body>
   
   
     
     
+
+
+
+  <!-- <section class="tweets">
+    <div class="tweets-container">
+      <article class="tweet">
+        <header class="tweet-header">
+            <img src="https://i.imgur.com/73hZDYK.png" alt="Avatar">
+          <div class="tweet-info">
+            <div class="username">John Doe</div>
+            <div class="handle">@johndoe</div>
+          </div>
+        </header>
+        <footer class="tweet-footer">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel laoreet velit. Nulla ac sagittis sem, id bibendum eros.</p>
+          <p class="line"></p>
+          <span class="tweet-buttons">
+            <i class="fa-solid fa-retweet fa-xl"></i>
+            <i class="fa-solid fa-flag fa-xl"></i>
+            <i class="fa-solid fa-heart fa-xl"></i>
+          </span>
+        </footer>
+      </article> -->
+      <!-- Add additional tweets here -->
+    <!-- </div>
+  </section> -->
