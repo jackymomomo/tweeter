@@ -15,13 +15,6 @@
   text-align: center;
 }
 
-.new-tweet h2 {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-}
-
-
 .new-tweet-form {
   display: flex;
   flex-direction: column;
