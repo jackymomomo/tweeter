@@ -8,7 +8,13 @@ $(document).ready(function() {
 
  const data = []
 
- 
+ const escape = str => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+ };
+
+
  const renderTweets = function(tweets) {
   $('#tweets-container').empty();
   for (let tweet of tweets) {
@@ -26,12 +32,10 @@ const createTweetElement = function(tweetData) {
           <img class="user-icon" src="${tweetData.user.avatars}"></img> 
           <h4 class="user-name">${tweetData.user.name}</h4>
         </div>
-        <div>
           <h4 class="user-handle">${tweetData.user.handle}</h4>
-        </div>
       </header>
       <div class="tweet-text">
-        ${tweetData.content.text}
+      ${escape(tweetData.content.text)}
       </div>
       <footer class="tweet-footer">
         <span class="tweet-date">${timeago.format(tweetData.created_at)}</span>
