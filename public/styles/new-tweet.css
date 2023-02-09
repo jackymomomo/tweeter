@@ -60,7 +60,8 @@ align-items: flex-start;
 }
 
 #submit:hover{
-  transition: ease-in-out 0.3s  ;
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0px 0px 10px 0px #000000;
 }
 
 .counter {
