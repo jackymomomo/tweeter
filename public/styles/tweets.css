@@ -69,8 +69,9 @@ article.tweet img {
 
 .tweet-text{
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 24px;
   padding: 10px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 div.tweet-response{
