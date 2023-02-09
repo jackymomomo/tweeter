@@ -3,6 +3,12 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+/>
+
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -38,31 +44,48 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <<nav>
+    <nav>
       <span class="logo">Tweeter</span>
-      <span class="write-tweet">
-        <span class="write-new-tweet">Write a new tweet</span>
+      <div class="write-tweet">
+        <span class="write-new-tweet"><strong>Write</strong> a new tweet</span>
       <i class="fas fa-angle-double-down fa-bounce" style= "color: red"></i>
-    </span>
+      </div>
     </nav>
-    
-    <header class="background">
-      <div>
-          <img src="/images/profile-hex.png"> 
+
+    <!-- Profile Header  -->
+    <header class="profile-header">
+      <div class="user-image">
+          <img class="user-image" src="/images/profile-hex.png"> 
       </div>
       <br>
-      <div>
-          <h2>Your Name</h2>
+      <div class="username">
+          <h2>Jack Robinson</h2>
       </div>
       
   </header>
     <!-- Page-specific (main) content here -->
     <main class="tweets-container">
+
+      <!-- Animated error message -->
+      <section id="error-message" >
+        <span id="empty-error-message" class="error-message-box">
+          <i class="fa fa-circle-exclamation"></i>
+          Please enter text before submitting a new Tweet!
+          <i class="fa fa-circle-exclamation"></i>
+        </span>
+        <span id="error-message-tooLong" class="error-message-box">
+          <i class="fa fa-circle-exclamation"></i>
+          your content length is above 140characters! plz reduce!
+          <i class="fa fa-circle-exclamation"></i>
+        </span>
+      </section>
+
+      <!-- Tweet text form  -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2 class="new-tweet-header">Compose Tweet</h2>
         <form action="/tweets" method="POST" id="new-tweet-form">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div>
+          <div class="new-tweet-footer">
             <button id="submit" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
@@ -75,32 +98,3 @@
     </body>
     </html>
   
-  
-    
-    
-
-
-
-  <!-- <section class="tweets">
-    <div class="tweets-container">
-      <article class="tweet">
-        <header class="tweet-header">
-            <img src="https://i.imgur.com/73hZDYK.png" alt="Avatar">
-          <div class="tweet-info">
-            <div class="username">John Doe</div>
-            <div class="handle">@johndoe</div>
-          </div>
-        </header>
-        <footer class="tweet-footer">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel laoreet velit. Nulla ac sagittis sem, id bibendum eros.</p>
-          <p class="line"></p>
-          <span class="tweet-buttons">
-            <i class="fa-solid fa-retweet fa-xl"></i>
-            <i class="fa-solid fa-flag fa-xl"></i>
-            <i class="fa-solid fa-heart fa-xl"></i>
-          </span>
-        </footer>
-      </article> -->
-      <!-- Add additional tweets here -->
-    <!-- </div>
-  </section> -->

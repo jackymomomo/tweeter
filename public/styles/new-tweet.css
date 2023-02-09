@@ -1,30 +1,4 @@
 
-/* main{
-  width: 90%;
-  display:flex;
-  flex-direction: column;
-  background-color:#f4f1ec;
-  font-family: sans-serif;
-}
-
-.tweet-button{
-  font-family: 'Bungee', sans-serif;
-  
-  color: #f4f1ec;
- }
- [name="text"]{
-  width: fit-content;
-  background-color: #f4f1ec;
-  border: hidden;
-  border-bottom: 3px solid black;
-  margin-bottom: 5px;
- }
-
- [name="counter"]{
-  font-family: 'Bungee', sans-serif;
-  font-size: 24px;
-  margin-left: 100%;
- } */
  .container {
   display: flex;
   justify-content: flex-start;
@@ -41,23 +15,23 @@
   text-align: center;
 }
 
-h2 {
+.new-tweet h2 {
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 }
 
 
-form {
+.new-tweet-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-textarea {
+#tweet-text {
   background-color: #f4f1ec;
   width: 100%;
-  height: 10px;
+  height: 65px;
   margin-bottom: 30px;
   padding: 20px;
   border-radius: 0;
@@ -67,10 +41,12 @@ textarea {
   resize: none;
 }
 
-div {
+.new-tweet-footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-family: 'Bungee', sans-serif;
+  font-size: 24px;
 }
 
 #submit {
@@ -79,9 +55,12 @@ div {
   color: #fff;
   padding: 10px 20px;
   border-radius: 10px;
-  border: none;
+  border-style: groove;
   cursor: pointer;
- 
+}
+
+#submit:hover{
+  transition: ease-in-out 0.3s  ;
 }
 
 .counter {
@@ -90,4 +69,29 @@ div {
   font-family: "Bungee", sans-serif;
 }
 
+.error-message-box {
+  display: flex;
+  border: 3px solid red;
+  color: red;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-top: -10px;
+  font-size: 20px;
+  font-family: sans-serif;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.error-message-box i {
+  color: red;
+margin-left: 5px;
+margin-right: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 100%;
+  } 
+}

@@ -6,6 +6,12 @@
 
 $(document).ready(function() {
 
+
+   //By default, error messages are hidden.
+   $("#empty-error-message").hide();
+   $("#error-message-tooLong").hide();
+
+
  const data = []
 
  const escape = str => {
@@ -59,27 +65,28 @@ const loadTweets = function() {
 loadTweets();
 
 $("#new-tweet-form").submit(function(event) {
-event.preventDefault();
-const maxChar = 140;
-const inputLength = $(this).find("#tweet-text").val().length;
+  event.preventDefault();
+  const maxChar = 140;
+  const inputLength = $(this).find("#tweet-text").val().length;
 
-if (!inputLength) {
-  return alert("Please enter text before submitting a new Tweet!");
-}
+  $("#empty-error-message").slideUp("slow");
+  $("#error-message-tooLong").slideUp("slow");
 
-if (inputLength - maxChar > 0) {
-  return alert("Please reduce your tweent content to less than or equal to 140 characters!");
-}
-const newTweet = $(this).serialize();
-$.post("/tweets/", newTweet, () => {
-  $(this).find("#tweet-text").val("");
-  $(this).find(".counter").val(maxChar);
-  loadTweets();
+  if (!inputLength) {
+    $("#empty-error-message").slideDown("slow");
+    $("#error-message-tooLong").hide();
+  } else if (inputLength - maxChar > 0) {
+    $("#error-message-tooLong").slideDown("slow");
+    $("#empty-error-message").hide();
+  } else {
+    const newTweet = $(this).serialize();
+    $.post("/tweets/", newTweet, () => {
+      $(this).find("#tweet-text").val("");
+      $(this).find(".counter").val(maxChar);
+      loadTweets();
+    });
+  }
 });
 });
-
-});
-
-
 
   
