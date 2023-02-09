@@ -4,7 +4,7 @@ section#tweets-container{
   display:flex;
   background-color:#f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .tweet{
@@ -63,11 +63,12 @@ article.tweet img {
   flex-direction: row;
   justify-content: space-around;
   padding: 7px;
-  margin-top: 10px;
+  margin-top: 50px;
   font-size: 18px;
 }
 
 .tweet-text{
+  margin-bottom: 20px;
   font-size: 18px;
   padding: 10px;
 }
@@ -77,14 +78,14 @@ div.tweet-response{
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-  letter-spacing: 3px;
+  letter-spacing: 8px;
   padding: 5px;
   color: #0d37be;
 }
 
 .tweet-response i:hover {
   transition: color 0.3s ease-in-out;
-  color: #2eaa3a;
+  color: #0dcb20;
 }
 
 

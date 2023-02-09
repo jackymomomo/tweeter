@@ -73,7 +73,7 @@ div {
   width: 100%;
 }
 
-.tweet-button {
+#submit {
   font-family: "Bungee", sans-serif;
   background-color: rgb(100,  149, 237);
   color: #fff;

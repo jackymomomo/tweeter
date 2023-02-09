@@ -1,35 +1,34 @@
+/*
+ * Client-side JS logic goes here
+ * jQuery is already loaded
+ * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ */
+
+
 $(document).ready(function() {
 
+ const data = []
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1661116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1661113959088
-    }
-  ];
+  $("#new-tweet-form").submit(function(event) {
+    event.preventDefault();
+    const maxChar = 140;
+    const inputLength = $(this).find('#tweet-text').val().length
+
+    if(!inputLength) { 
+      return alert("please enter text before submitting a tweet!")
+    } 
+    
+    if (inputLength - maxChar > 0) {
+      return alert("Your message is exceeding the maximum 140 letters")
+    } 
+    
+      const newTweet = $(this).serialize();
+      $.post("/tweets/", newTweet);
+  });
 
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      console.log($tweet);
       $('#tweets-container').append($tweet);
     }
   };
@@ -60,5 +59,12 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
+
+  const loadTweets = () => {
+    $.get("/tweets/", newTweet => {
+      renderTweets(newTweet);
+    });
+  };
+  
+  loadTweets();
 });
